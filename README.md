@@ -49,14 +49,23 @@ However, you can try the [Azure pricing calculator](https://azure.com/e/01860617
 
 Click the Deploy to Azure button to deploy the Azure resources for the demo.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)]()
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhugobarona%2Fgetting-started-with-azure-sql-automatic-tuning%2Fmain%2Finfra%2Fmain.json)
+
+- Configure Azure SQL Server Firewall rules
+  You need to configure the firewall rules to whitelist at least your IP address so you can access the database.
+  If you are unfamiliar with this configuration, please refer [to this link](https://learn.microsoft.com/en-us/azure/azure-sql/database/secure-database-tutorial?WT.mc_id=AZ-MVP-5004069).
+  ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/e10aa350-815a-49dc-9c03-b78cd6a65339)
+
+- Connect to your Azure SQL database using the Azure Portal
+  Once you configure the firewall rules, you can use the Azure Portal to connect to your Azure SQL Database as per the image below.
+  ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/5ae685ee-acba-40c8-910a-1fd622a056ca)
 
 - [Enable Automatic Tuning on Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?WT.mc_id=AZ-MVP-5004069)
   You have different ways to enable automatic tuning on your Azure SQL database. Please refer to the link provided above to enable the automatic tuning. By default, automatic tuning is only enabled to force the last good plan to ensure your queries run on your database using the best query plan.
 
 ### Contributing
 
-You are welcome to contribute to this repository. If you find any issues, have suggestions or improvements to provide, please create a Pull request and provide all relevant information.
+You are welcome to contribute to this repository. If you find any issues or have suggestions/improvements to provide, please create a Pull request and provide all relevant information.
 Additionally, you can connect with me on LinkedIn and report any issues or discuss any suggestions and ideas.
 
 [![Connect with me](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)](https://www.linkedin.com/in/hugomiguelbarona/)
