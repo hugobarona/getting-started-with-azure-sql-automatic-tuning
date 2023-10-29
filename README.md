@@ -35,22 +35,28 @@ To run and test this demo, you must configure and meet the following prerequisit
   ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/ef563dec-7583-4af6-86c0-039c73e914cd)
 - SQLQueryStress - https://apps.microsoft.com/detail/9N46QJ5SBGKB (**in case you want to run your queries locally and avoid additional costs to run your queries using Azure Functions or Azure Automation, you can install and use the app SQLQueryStress on your local environment, configure the database settings and run the desired queries.**
 
+### Cost estimation
+
+Pricing varies per region and usage, so it isn't possible to predict exact costs for your usage. 
+However, you can try the [Azure pricing calculator](https://azure.com/e/018606173b374c8e8f7c499dee27b328) for the resources below.
+
 ### Deployment Steps
 
 - Run the deployment to create your Azure SQL database
 
 > **Warning**
-> This button will only create the Azure SQL database using the sample dataset _AdventureWorksLT_.
+> This button will only create the Azure SQL database using the sample dataset _AdventureWorksLT_. Verify the costs of using this service before creating it.
 
-Click on the Deploy to Azure button to deploy the Azure resources for the demo.
+Click the Deploy to Azure button to deploy the Azure resources for the demo.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)]()
 
 - [Enable Automatic Tuning on Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?WT.mc_id=AZ-MVP-5004069)
   You have different ways to enable automatic tuning on your Azure SQL database. Please refer to the link provided above to enable the automatic tuning. By default, automatic tuning is only enabled to force the last good plan to ensure your queries run on your database using the best query plan.
 
+### Contributing
 
-### Cost estimation
+You are welcome to contribute to this repository. If you find any issues, have suggestions or improvements to provide, please create a Pull request and provide all relevant information.
+Additionally, you can connect with me on LinkedIn and report any issues or discuss any suggestions and ideas.
 
-Pricing varies per region and usage, so it isn't possible to predict exact costs for your usage. 
-However, you can try the [Azure pricing calculator](https://azure.com/e/018606173b374c8e8f7c499dee27b328) for the resources below.
+[![Connect with me]([https://aka.ms/deploytoazurebutton](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)](https://www.linkedin.com/in/hugomiguelbarona/)
