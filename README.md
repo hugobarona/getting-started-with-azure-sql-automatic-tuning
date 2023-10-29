@@ -59,4 +59,4 @@ Click the Deploy to Azure button to deploy the Azure resources for the demo.
 You are welcome to contribute to this repository. If you find any issues, have suggestions or improvements to provide, please create a Pull request and provide all relevant information.
 Additionally, you can connect with me on LinkedIn and report any issues or discuss any suggestions and ideas.
 
-[![Connect with me]([https://aka.ms/deploytoazurebutton](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)](https://www.linkedin.com/in/hugomiguelbarona/)
+[![Connect with me](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg)](https://www.linkedin.com/in/hugomiguelbarona/)
