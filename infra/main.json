@@ -33,18 +33,6 @@
             }
         },
         {
-            "type": "Microsoft.Sql/servers/connectionPolicies",
-            "apiVersion": "2023-02-01-preview",
-            "name": "[concat(parameters('servers_dbsvr_autotuningdemo_name'), '/default')]",
-            "location": "eastus",
-            "dependsOn": [
-                "[resourceId('Microsoft.Sql/servers', parameters('servers_dbsvr_autotuningdemo_name'))]"
-            ],
-            "properties": {
-                "connectionType": "Default"
-            }
-        },
-        {
             "type": "Microsoft.Sql/servers/databases",
             "apiVersion": "2023-02-01-preview",
             "name": "[concat(parameters('servers_dbsvr_autotuningdemo_name'), '/db-auto-tuning-demo')]",
@@ -66,19 +54,8 @@
                 "readScale": "Disabled",
                 "requestedBackupStorageRedundancy": "Local",
                 "isLedgerOn": false,
-                "availabilityZone": "NoPreference"
-            }
-        },
-        {
-            "type": "Microsoft.Sql/servers/keys",
-            "apiVersion": "2023-02-01-preview",
-            "name": "[concat(parameters('servers_dbsvr_autotuningdemo_name'), '/ServiceManaged')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.Sql/servers', parameters('servers_dbsvr_autotuningdemo_name'))]"
-            ],
-            "kind": "servicemanaged",
-            "properties": {
-                "serverKeyType": "ServiceManaged"
+                "availabilityZone": "NoPreference",
+                "sampleName":"AdventureWorksLT"
             }
         }
     ]
