@@ -68,13 +68,26 @@ Click the Deploy to Azure button to deploy the Azure resources for the demo.
      If you decide to use an Azure Function to run the queries to your databases for 24+ hours, then you need to perform two steps:
      - [Create an Azure Function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal)
        **NOTE: Please ensure that you select the runtime stack as Python and version 3.9.**
-     - Deploy the Azure Function's source code available in this repo to your newly created function
+     - [Deploy the Azure Function's source code available in this repo to your newly created function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=node-v3%2Cpython-v2%2Cisolated-process&pivots=programming-language-python#republish-project-files)
    - Run queries using SQLQueryStress
      In case you want to run your queries from your local environment, an easy way is to use the SQLQueryStress app, by doing the following steps:
      - [Install the SQLQueryStress app](https://apps.microsoft.com/detail/9N46QJ5SBGKB)
      - Configure the app as per image below. Don't forget to copy the connection details from the Azure SQL database you created.
-        
+       Note I am setting a big number for the _number of iterations_ so it can stay running for a couple of days before finalizing all iterations. Also, you can set a delay between queries to wait after completing the current query, before starting the new query.
+       In terms of configuring the database settings, you can copy all details from the Azure Portal, by accessing your database's connection strings setting.
+        ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/bd5f3876-faec-4c2a-bc0d-ce7e4bdd1a56)
+![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/39fc7e1f-4b25-49ee-8c8a-d72bf8e03d27)
+
      - Run the queries available in this repo and wait for the results.
+       You have different queries you can run to test out different scenarios, but I am going to give you this example so you can get inspired to write your own queries and try out the service. **Note: Keep in mind that the queries you run should be queries that require some optimization/tuning in your database, so the service is able to identify the performance recommendations for those queries.**
+ 
+      Copy content from the _SQLQueries.sql_ file and paste it in SQLQueryStress app and run it.
+     **Note: In case you want to run multiple queries at same time, open separate instances of the SQLQueryStress app and configure the queries accordingly.**
+       
+       In case you are not sure if your query is unoptimized, you can run the query using the _Azure Data Studio _ and enable the query execution plan so you can analyze the plan and the results presented in the plan, as per image below.
+
+       ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/6beb2668-ad6b-43aa-9f7f-16fbf7e2ffde)
+
 
 - Verify results
   After running your queries for at least 24 hours continuously, you should see performance recommendations for your database. You need to run your unoptimized queries for a significant time so the AI used by the service is able to learn from it and provide recommendations to improve the performance of your queries and database.
