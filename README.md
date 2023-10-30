@@ -33,7 +33,7 @@ To run and test this demo, you must configure and meet the following prerequisit
   - Your Azure account needs _Microsoft.Resources/deployments/write_ permissions on the subscription level.
 - Azure Functions extension for VS Code (in case you are using VS Code. Alternatively, you can use Visual Studio and install the extension on the Visual Studio). - **This is only required if you are running your SQL queries using Azure Functions**
   ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/ef563dec-7583-4af6-86c0-039c73e914cd)
-- SQLQueryStress - https://apps.microsoft.com/detail/9N46QJ5SBGKB (**in case you want to run your queries locally and avoid additional costs to run your queries using Azure Functions or Azure Automation, you can install and use the app SQLQueryStress on your local environment, configure the database settings and run the desired queries.**
+- SQLQueryStress - [https://apps.microsoft.com/detail/9N46QJ5SBGKB](https://apps.microsoft.com/detail/9N46QJ5SBGKB) (**in case you want to run your queries locally and avoid additional costs to run your queries using Azure Functions or Azure Automation, you can install and use the app SQLQueryStress on your local environment, configure the database settings and run the desired queries.**
 
 ### Cost estimation
 
@@ -62,6 +62,27 @@ Click the Deploy to Azure button to deploy the Azure resources for the demo.
 
 - [Enable Automatic Tuning on Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/automatic-tuning-enable?WT.mc_id=AZ-MVP-5004069)
   You have different ways to enable automatic tuning on your Azure SQL database. Please refer to the link provided above to enable the automatic tuning. By default, automatic tuning is only enabled to force the last good plan to ensure your queries run on your database using the best query plan.
+
+- Run your queries against your database
+   - Run queries using Azure Functions
+     If you decide to use an Azure Function to run the queries to your databases for 24+ hours, then you need to perform two steps:
+     - [Create an Azure Function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal)
+       **NOTE: Please ensure that you select the runtime stack as Python and version 3.9.**
+     - Deploy the Azure Function's source code available in this repo to your newly created function
+   - Run queries using SQLQueryStress
+     In case you want to run your queries from your local environment, an easy way is to use the SQLQueryStress app, by doing the following steps:
+     - [Install the SQLQueryStress app](https://apps.microsoft.com/detail/9N46QJ5SBGKB)
+     - Configure the app as per image below. Don't forget to copy the connection details from the Azure SQL database you created.
+        
+     - Run the queries available in this repo and wait for the results.
+
+- Verify results
+  After running your queries for at least 24 hours continuously, you should see performance recommendations for your database. You need to run your unoptimized queries for a significant time so the AI used by the service is able to learn from it and provide recommendations to improve the performance of your queries and database.
+
+  If you set your automatic tuning settings to **ON** for the _create index_ and _drop index_, then you should see after a while logs on the tuning history showing the actions performed by the service to your database. Those actions will include applying and verifying the recommendations on your database.
+
+  ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/b77e9bde-262c-4df9-ad2a-953c372f8717)
+
 
 ### Contributing
 
