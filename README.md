@@ -34,6 +34,7 @@ To run and test this demo, you must configure and meet the following prerequisit
 - Azure Functions extension for VS Code (in case you are using VS Code. Alternatively, you can use Visual Studio and install the extension on the Visual Studio). - **This is only required if you are running your SQL queries using Azure Functions**
   ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/ef563dec-7583-4af6-86c0-039c73e914cd)
 - SQLQueryStress - [https://apps.microsoft.com/detail/9N46QJ5SBGKB](https://apps.microsoft.com/detail/9N46QJ5SBGKB) (**in case you want to run your queries locally and avoid additional costs to run your queries using Azure Functions or Azure Automation, you can install and use the app SQLQueryStress on your local environment, configure the database settings and run the desired queries.**
+- Python 3.9
 
 ### Cost estimation
 
@@ -69,8 +70,8 @@ Click the Deploy to Azure button to deploy the Azure resources for the demo.
      - [Create an Azure Function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal)
        **NOTE: Please ensure that you select the runtime stack as Python and version 3.9.**
      - Configure the Azure Function Settings
-       You need to clone this repository to your local machine and then modify the function's settings to use your database's configuration before you deploy it. If you want to be sure the configuration changes you made are correct, you can run the function locally by following the guide link provided in the next step.
-        ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/63adb84e-484e-490e-b72c-a44563e544db)
+       You need to clone this repository to your local machine and then modify the function's settings to use your database's configuration before you deploy it. If you want to be sure the configuration changes you made are correct, you can run the function locally by following the guide link provided in the next step. Before running the function, you need to ensure you select your python interpreter available in your machine, as per image below.
+       ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/a336c840-474c-481b-a3c6-b2dcae71a356)
 
      - [Deploy the Azure Function's source code available in this repo to your newly created function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=node-v3%2Cpython-v2%2Cisolated-process&pivots=programming-language-python#republish-project-files)
    - Run queries using SQLQueryStress
