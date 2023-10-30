@@ -68,6 +68,10 @@ Click the Deploy to Azure button to deploy the Azure resources for the demo.
      If you decide to use an Azure Function to run the queries to your databases for 24+ hours, then you need to perform two steps:
      - [Create an Azure Function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal)
        **NOTE: Please ensure that you select the runtime stack as Python and version 3.9.**
+     - Configure the Azure Function Settings
+       You need to clone this repository to your local machine and then modify the function's settings to use your database's configuration before you deploy it. If you want to be sure the configuration changes you made are correct, you can run the function locally by following the guide link provided in the next step.
+        ![image](https://github.com/hugobarona/getting-started-with-azure-sql-automatic-tuning/assets/5125006/63adb84e-484e-490e-b72c-a44563e544db)
+
      - [Deploy the Azure Function's source code available in this repo to your newly created function](https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=node-v3%2Cpython-v2%2Cisolated-process&pivots=programming-language-python#republish-project-files)
    - Run queries using SQLQueryStress
      In case you want to run your queries from your local environment, an easy way is to use the SQLQueryStress app, by doing the following steps:
